@@ -25,7 +25,7 @@ public class adminManageNews {
 
     @Step("I set GET api endpoints news by id")
     public String setGetEpNewsByID() {
-        return url + "news/100";
+        return url + "news/12";
     }
 
     @Step("I set GET api endpoints news by out of bound ID")
@@ -35,7 +35,7 @@ public class adminManageNews {
 
     @Step("I set GET api endpoints news by invalid ID")
     public String setGetEpNewsByInvalidID() {
-        return url + "news/-100";
+        return url + "news/-12";
     }
 
     /// Positive
