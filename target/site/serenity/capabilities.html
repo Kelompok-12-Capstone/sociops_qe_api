@@ -154,7 +154,7 @@
             $("#requirements-tabs").tabs();
             $("#test-tabs").tabs();
 
-            var requirementsTree = [];
+            var requirementsTree = [{"text":"Manage News Admin","type":"feature","href":"e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-check-circle-fill success-icon \u0027 title\u003d\u0027SUCCESS\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e8 scenarios\u003c/span\u003e"]}];
 
             $('#tree').treeview({
                 data: requirementsTree,
@@ -219,8 +219,11 @@
         <li class="active">
             <a href="#"><i class="bi bi-journal-text"></i> Requirements</a>
         </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated </span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 24-06-2023 00:33</span>
     <br style="clear:left"/>
 </div>
 
@@ -254,6 +257,9 @@
                                                 <h3>Feature Coverage By Scenario</h3>
 
                                                 <!-- REQUIREMENTS PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="requirementChart" width="300" height="300"></canvas>
+                                                    </div>
 
                                             </div>
                                             <div class="col-sm-8">
@@ -271,60 +277,60 @@
                     <td>
                         <i class="bi bi-card-checklist"></i> Number of Scenarios
                     </td>
-                    <td>0</td>
+                    <td>8</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-caret-right"></i> Total Number of Test Cases
                     </td>
-                    <td>0</td>
+                    <td>8</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-flag-fill"></i> Tests Started
                     </td>
-                    <td></td>
+                    <td>Jun 24, 2023 00:33:36</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-stop-circle"></i> Tests
                         Finished
                     </td>
-                    <td></td>
+                    <td>Jun 24, 2023 00:33:44</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-stopwatch"></i> Total
                         Duration
                     </td>
-                    <td>0ms</td>
+                    <td>7s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-trophy"></i> Fastest Test
                     </td>
-                    <td>0ms</td>
+                    <td>611ms</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-skip-start"></i> Slowest
                         Test
                     </td>
-                    <td>0ms</td>
+                    <td>3s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-stopwatch"></i> Average
                         Execution Time
                     </td>
-                    <td>0ms</td>
+                    <td>987ms</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-stopwatch-fill"></i> Total
                         Execution Time
                     </td>
-                    <td>0ms</td>
+                    <td>7s</td>
                 </tr>
                 </tbody>
             </table>
@@ -343,6 +349,9 @@
                                             <div class="col-sm-4">
                                                 <h3>Feature Coverage By Scenario</h3>
                                                 <!-- TEST RESULT PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="resultChart" width="300" height="300"></canvas>
+                                                    </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <h4><i class="bi bi-check-square"></i> Test Outcomes</h4>
@@ -374,22 +383,22 @@
                     <td>
                         <i class="bi bi-card-checklist"></i> Number of Scenarios
                     </td>
-                    <td>0</td>
+                    <td>8</td>
                     <td>
                         <i class="bi bi-stopwatch"></i> Total
                         Duration
                     </td>
-                    <td>0ms</td>
+                    <td>7s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-caret-right"></i> Total Number of Test Cases
                     </td>
-                    <td>0</td>
+                    <td>8</td>
                     <td>
                         <i class="bi bi-trophy"></i> Fastest Test
                     </td>
-                    <td>0ms</td>
+                    <td>611ms</td>
                 </tr>
                 <tr scope="row">
                     <td>
@@ -400,30 +409,30 @@
                         <i class="bi bi-skip-start"></i> Slowest
                         Test
                     </td>
-                    <td>0ms</td>
+                    <td>3s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-flag-fill"></i> Tests Started
                     </td>
-                    <td></td>
+                    <td>Jun 24, 2023 00:33:36</td>
                     <td>
                         <i class="bi bi-stopwatch"></i> Average
                         Execution Time
                     </td>
-                    <td>0ms</td>
+                    <td>987ms</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-stop-circle"></i> Tests
                         Finished
                     </td>
-                    <td></td>
+                    <td>Jun 24, 2023 00:33:44</td>
                     <td>
                         <i class="bi bi-stopwatch-fill"></i> Total
                         Execution Time
                     </td>
-                    <td>0ms</td>
+                    <td>7s</td>
                 </tr>
                 </tbody>
             </table>
@@ -432,7 +441,141 @@
 
                                                 <h3><i class="bi bi-gear"></i> Automated Tests</h3>
 
-                                                    No automated tests were executed
+                                                    <table class="scenario-result-table table" id="scenario-results">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>feature</th>
+                                                            <th class="test-name-column">Scenario</th>
+                                                            <th>Context</th>
+                                                            <th>Steps</th>
+                                                            <th>Started</th>
+                                                            <th>Total Duration</th>
+                                                            <th>Result</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html">Manage News Admin</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="adcd567e21a9c82131f241ddeb46824bbda7362c07c1434f06b6daab48e5f92b.html">POST - Create new news without fill title payload</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-windows' title='Windows'></i></span><span style="display:none">windows</span> </td>
+                                                                    <td>3</td>
+                                                                    <td>00:33:36</td>
+                                                                    <td>3s 461ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html">Manage News Admin</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="e5d6fc8908d60e54d4e0541d59a1d419dfc911d630214e38a83ef7c8f7fb42e8.html">POST - Create new news without fill description payload</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-windows' title='Windows'></i></span><span style="display:none">windows</span> </td>
+                                                                    <td>3</td>
+                                                                    <td>00:33:39</td>
+                                                                    <td>640ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html">Manage News Admin</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="a2176f2f3493cdaff3a0aefc70e2abc39ea89201d0d7765021a6376832f868c8.html">POST - Create new news only fill 1 char in title payload</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-windows' title='Windows'></i></span><span style="display:none">windows</span> </td>
+                                                                    <td>3</td>
+                                                                    <td>00:33:40</td>
+                                                                    <td>650ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html">Manage News Admin</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="ac55edfa78655e3a62f3fee12787c382ebf9e5d3ba9e207769c621427bdbb2f9.html">POST - Create new news only fill 1 char in description payload</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-windows' title='Windows'></i></span><span style="display:none">windows</span> </td>
+                                                                    <td>3</td>
+                                                                    <td>00:33:40</td>
+                                                                    <td>644ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html">Manage News Admin</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="992b14a6da698f8b5ee122992a28345f4f32b04ff4800d09f74002672a178df2.html">GET - All news</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-windows' title='Windows'></i></span><span style="display:none">windows</span> </td>
+                                                                    <td>3</td>
+                                                                    <td>00:33:41</td>
+                                                                    <td>649ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html">Manage News Admin</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="0a0ced48e778428e033673ee6d7a370be7f7bb68467d85e853c03715482b4ac5.html">GET - News by ID</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-windows' title='Windows'></i></span><span style="display:none">windows</span> </td>
+                                                                    <td>3</td>
+                                                                    <td>00:33:42</td>
+                                                                    <td>627ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html">Manage News Admin</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="5142c3e3b2d131b8ca3cd4c09f475b2221c3164980d495c283df7f035c6187aa.html">GET - News by out of bound ID</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-windows' title='Windows'></i></span><span style="display:none">windows</span> </td>
+                                                                    <td>3</td>
+                                                                    <td>00:33:42</td>
+                                                                    <td>621ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html">Manage News Admin</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="c91115125ba5f67d3705ad04f7c763ecdecbfd7bc3d8fdd30dc3ca8f9cb74ad4.html">GET - News by invalid ID</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-windows' title='Windows'></i></span><span style="display:none">windows</span> </td>
+                                                                    <td>3</td>
+                                                                    <td>00:33:43</td>
+                                                                    <td>611ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                        </tbody>
+                                                    </table>
 
                                             </div>
                                         </div>
@@ -446,6 +589,23 @@
                                             </div>
                                         </div>
 
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Context</h5>
+                            <div>
+                                    <a href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Windows&nbsp;&nbsp;&nbsp;8
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
                                     </div>
                                 </div>
                             </div>
@@ -486,7 +646,7 @@
             datasets: [{
                 label: 'Test Results',
                 fill: false,
-                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                data: [{meta: 'Passing tests', value: 8}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
                 backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                 borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                 borderWidth: 1,
@@ -537,7 +697,7 @@
                         ctx.font = fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
 
-                        var text = " "
+                        var text = "100%"
                         textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
                         textY = (height / 2) - 40;
 
@@ -581,7 +741,7 @@
             datasets: [{
                 label: 'Feature Coverage',
                 fill: false,
-                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                data: [{meta: 'Passing tests', value: 8}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
                 backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                 borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                 borderWidth: 1,
@@ -632,7 +792,7 @@
                         ctx.font = fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
 
-                        var text = " "
+                        var text = "100%"
                         textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
                         textY = (height / 2) - 40;
 
@@ -677,7 +837,7 @@
             datasets: [
                 {
                     label: 'Automated',
-                    data: [0,0,0,0,0,0,0,0],
+                    data: [8,0,0,0,0,0,0,0],
                     backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                     borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                     borderWidth: 1
@@ -760,7 +920,7 @@
             datasets: [{
                 label: 'Number of tests per duration',
                 fill: false,
-                data: ['0','0','0','0','0','0','0','0'],
+                data: ['7','1','0','0','0','0','0','0'],
                 backgroundColor: 'rgba(83, 146, 255,0.5)',
                 borderColor: 'rgba(83, 146, 255, 1)',
             }]

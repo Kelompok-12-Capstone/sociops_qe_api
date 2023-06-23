@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Manage News Admin","POST - Create new news without fill description payload","SUCCESS","2023-06-24T00:33:39.6203049+07:00[Asia/Bangkok]","0.0","0.64"
+"Manage News Admin","POST - Create new news only fill 1 char in title payload","SUCCESS","2023-06-24T00:33:40.2746685+07:00[Asia/Bangkok]","0.0","0.65"
+"Manage News Admin","POST - Create new news only fill 1 char in description payload","SUCCESS","2023-06-24T00:33:40.9396664+07:00[Asia/Bangkok]","0.0","0.64"
+"Manage News Admin","GET - All news","SUCCESS","2023-06-24T00:33:41.5939526+07:00[Asia/Bangkok]","0.0","0.65"
+"Manage News Admin","GET - News by ID","SUCCESS","2023-06-24T00:33:42.2549982+07:00[Asia/Bangkok]","0.0","0.63"
+"Manage News Admin","GET - News by out of bound ID","SUCCESS","2023-06-24T00:33:42.8921518+07:00[Asia/Bangkok]","0.0","0.62"
+"Manage News Admin","GET - News by invalid ID","SUCCESS","2023-06-24T00:33:43.5230434+07:00[Asia/Bangkok]","0.0","0.61"

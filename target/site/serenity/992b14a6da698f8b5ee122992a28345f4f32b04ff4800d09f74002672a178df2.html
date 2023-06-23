@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>GET - All news</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<!-- ImgPreview -->
+<script src="scripts/imgpreview.full.jquery.js" type="text/javascript"></script>
+</head>
+
+<body class="results-page">
+
+
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs">
+            <a href="index.html" class="breadcrumbs">Home</a>
+
+ <!-- inflection.of(breadcrumb.displayName).asATitle()-->
+            > <a href="e679f23900b1bbf5b5fd06f574debf8866c1ed5a03ea763db34584ce2a76a21c.html">Manage News Admin</a>
+        > GET - All news
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 24-06-2023 00:33</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                                <div>
+                                    <h3 class="discreet-story-header">
+                                        <i class="fs-2 bi bi-chat-left-quote title-icon"></i>
+                                        <span class="story-header-title">Manage News Admin </span>
+                                    </h3>
+
+                                </div>
+
+                        </td>
+                        <td valign="top">
+                            <p class="tag">
+                                    <span class="badge example-tag tag-badge" style="background:default;">
+                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                        <a class="tagLink" style="background:default;"
+                                           href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">Windows
+                                        </a>
+                                </span>
+                                    <span class='context-icon'><i class='bi bi-windows' title='Windows'></i></span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">
+                                    GET - All news
+                                        <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+</div>
+</div>
+
+<div class="clr"></div>
+
+
+<div id="beforetable"></div>
+
+
+<div id="tablecontents">
+    <div>
+        <table class="step-table">
+            <tr class="step-titles">
+                <th width="65">
+                </th>
+                <th class="step-description-column greentext">
+                    Steps
+                </th>
+
+                <th width="130" class="greentext">Outcome</th>
+                <th width="100" class="greentext"><i title="Duration" class="bi bi-stopwatch"></i></th>
+            </tr>
+            <tr class="step-table-separator">
+                <td colspan="5"></td>
+            </tr>
+
+                <tr class="test-SUCCESS">
+
+                    <td width="50" class="step-icon">
+                        <a name="0"></a>
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                               style="display:block">
+                                <i class="bi bi-caret-right-square imgstepSection0 success-icon"
+                                   style="margin-left: 20px; float:left; padding-right:5px"></i>
+                            </a>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                               style="display:block;">
+                                <span class="top-level-step">
+                                                Given I set GET api endpoints all news
+                                        </span>
+                            </a>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                    <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                    <td width="100"><span class="top-level-step">007ms</span></td>
+                </tr>
+                    <tr>
+                        <td colspan="5">
+                            <table id="stepSection0" class="step-table-nested" style="display:none;">
+                <tr class="test-SUCCESS">
+
+                    <td width="70" class="step-icon">
+                        <a name="0-0"></a>
+                            <span style="margin-left: 40px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                I set GET api endpoints all news
+                                        </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step">001ms</span></td>
+                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                <tr class="test-SUCCESS">
+
+                    <td width="50" class="step-icon">
+                        <a name="1"></a>
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                               style="display:block">
+                                <i class="bi bi-caret-right-square imgstepSection1 success-icon"
+                                   style="margin-left: 20px; float:left; padding-right:5px"></i>
+                            </a>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                               style="display:block;">
+                                <span class="top-level-step">
+                                                When I send GET HTTP request all news
+                                        </span>
+                            </a>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                    <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                    <td width="100"><span class="top-level-step">630ms</span></td>
+                </tr>
+                    <tr>
+                        <td colspan="5">
+                            <table id="stepSection1" class="step-table-nested" style="display:none;">
+                <tr class="test-SUCCESS">
+
+                    <td width="70" class="step-icon">
+                        <a name="1-0"></a>
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
+                               style="display:block">
+                                <i class="bi bi-caret-right-square imgstepSection1-0 success-icon"
+                                   style="margin-left: 40px; float:left; padding-right:5px"></i>
+                            </a>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
+                               style="display:block;">
+                                <span class="nested-step">
+                                                I send GET HTTP request all news
+                                        </span>
+                            </a>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                    <td width="130"><span class="nested-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-step">628ms</span></td>
+                </tr>
+                    <tr>
+                        <td colspan="5">
+                            <table id="stepSection1-0" class="step-table-nested" style="display:none;">
+                <tr class="test-SUCCESS">
+
+                    <td width="90" class="step-icon">
+                        <a name="1-0-0"></a>
+                            <span style="margin-left: 60px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                I set GET api endpoints all news
+                                        </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step">001ms</span></td>
+                </tr>
+                <tr class="test-SUCCESS">
+
+                    <td width="90" class="step-icon">
+                        <a name="1-0-1"></a>
+                            <span style="margin-left: 60px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                GET https://sociops-backend-production.up.railway.app/news?page=1
+                                        </span>
+                            <span class="evidence">
+                                        <span class="piece-of-evidence">
+                <span>
+                        <button type="button" class="btn btn-success btn-sm" data-toggle="collapse"
+                                data-target="#restModal-REST-6">
+                            REST Query
+                        </button>
+                    </span>
+                <!-- Modal -->
+                <div class="rest-query-details">
+                    <div class="collapse multi-collapse" id="restModal-REST-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Response</h4>
+                                    <p>URL: https://sociops-backend-production.up.railway.app/news?page=1</p>
+                                    <p>Status code: 200</p>
+                                    <p>Content Type: null</p>
+                                    <h4>Request Headers</h4>
+                                    <pre>Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1IiwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNjg3NTgzOTUwfQ.ajHiamQlvdpozXu9xIA2a7icSP0w9fjamZwndtTFqvY<br>Accept=*/*</pre>
+                                    <h4>Response Headers</h4>
+                                    <pre>content-type: application/json; charset=UTF-8<br>vary: Origin<br>date: Fri, 23 Jun 2023 17:33:43 GMT<br>server: railway<br>transfer-encoding: chunked</pre>
+                                <h4>Response Body</h4>
+                                    <pre>{<br>    &quot;data&quot;: [<br>        {<br>            &quot;author&quot;: &quot;Wildan R&quot;,<br>            &quot;category_id&quot;: null,<br>            &quot;category_name&quot;: &quot;&quot;,<br>            &quot;created_at&quot;: &quot;2023-05-29T13:48:40.259Z&quot;,<br>            &quot;description&quot;: &quot;Mencoba mencoba mencoba mencoba&quot;,<br>            &quot;id&quot;: 64,<br>            &quot;photo_url&quot;: &quot;https://firebasestorage.googleapis.com/v0/b/sociops-5362c.appspot.com/o/images%2Fmaxresdefault.jpg?alt=media&amp;token=e8ca18ab-dc61-4b9c-927d-e874d462ff85&quot;,<br>            &quot;title&quot;: &quot;Berita mencoba&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-18T13:48:40.259Z&quot;<br>        },<br>        {<br>            &quot;author&quot;: &quot;Wildan R&quot;,<br>            &quot;category_id&quot;: null,<br>            &quot;category_name&quot;: &quot;&quot;,<br>            &quot;created_at&quot;: &quot;2023-05-30T14:03:33.972Z&quot;,<br>            &quot;description&quot;: &quot;Eka Bayu Alvian Wildan Yahoo&quot;,<br>            &quot;id&quot;: 65,<br>            &quot;photo_url&quot;: &quot;https://firebasestorage.googleapis.com/v0/b/sociops-5362c.appspot.com/o/images%2Fmaxresdefault.jpg?alt=media&amp;token=0ccfefab-f869-4537-b960-4053497f24d7&quot;,<br>            &quot;title&quot;: &quot;Eka Bayu Alvian&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-18T14:03:33.972Z&quot;<br>        },<br>        {<br>            &quot;author&quot;: &quot;Wildan R&quot;,<br>            &quot;category_id&quot;: null,<br>            &quot;category_name&quot;: &quot;&quot;,<br>            &quot;created_at&quot;: &quot;2023-05-31T14:12:05.332Z&quot;,<br>            &quot;description&quot;: &quot;Alvian bayu membuat berita&quot;,<br>            &quot;id&quot;: 66,<br>            &quot;photo_url&quot;: &quot;https://firebasestorage.googleapis.com/v0/b/sociops-5362c.appspot.com/o/images%2Fmaxresdefault.jpg?alt=media&amp;token=e1e5309c-b723-453f-98fe-b142bba8c440&quot;,<br>            &quot;title&quot;: &quot;Alvian bayu&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-18T14:12:05.332Z&quot;<br>        },<br>        {<br>            &quot;author&quot;: &quot;Wildan R&quot;,<br>            &quot;category_id&quot;: null,<br>            &quot;category_name&quot;: &quot;&quot;,<br>            &quot;created_at&quot;: &quot;2023-06-01T12:45:51.775Z&quot;,<br>            &quot;description&quot;: &quot;xsaxsaxasxasx sdasdsadjklaj jksdjsaajdaklsjd kljdajsdkajljdkasdjla kjskldjasjdakjdsljaldjalsj dsadasdasda sdaddasdasd&quot;,<br>            &quot;id&quot;: 73,<br>            &quot;photo_url&quot;: &quot;https://firebasestorage.googleapis.com/v0/b/sociops-5362c.appspot.com/o/images%2FYoimiya.png?alt=media&amp;token=cf93c9e8-7be9-4172-bda1-685cee5b50d5&quot;,<br>            &quot;title&quot;: &quot;Mengerjakan Mini Project Ssasasasa sadasdasdsadasdasd&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-19T12:45:51.775Z&quot;<br>        },<br>        {<br>            &quot;author&quot;: &quot;SkilledUp Life&quot;,<br>            &quot;category_id&quot;: 1,<br>            &quot;category_name&quot;: &quot;Pendidikan&quot;,<br>            &quot;created_at&quot;: &quot;2023-06-02T22:57:36.377Z&quot;,<br>            &quot;description&quot;: &quot;hhhhhhhhhhh: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&quot;,<br>            &quot;id&quot;: 83,<br>            &quot;photo_url&quot;: &quot;https://via.placeholder.com/1500&quot;,<br>            &quot;title&quot;: &quot;lorem Ipsum&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-21T22:57:36.377Z&quot;<br>        },<br>        {<br>            &quot;author&quot;: &quot;Wildan R&quot;,<br>            &quot;category_id&quot;: null,<br>            &quot;category_name&quot;: &quot;&quot;,<br>            &quot;created_at&quot;: &quot;2023-06-03T09:27:37.418Z&quot;,<br>            &quot;description&quot;: &quot;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate rem ducimus qui aliquid fugit ratione totam officia eligendi magni doloribus?&quot;,<br>            &quot;id&quot;: 85,<br>            &quot;photo_url&quot;: &quot;https://firebasestorage.googleapis.com/v0/b/sociops-5362c.appspot.com/o/images%2FScreenshot%20(105).png?alt=media&amp;token=63609d2a-0e71-4a77-808c-e577929933c5&quot;,<br>            &quot;title&quot;: &quot;Mabar bareng Honkai Star Rail&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-22T09:27:37.418Z&quot;<br>        },<br>        {<br>            &quot;author&quot;: &quot;Wildan R&quot;,<br>            &quot;category_id&quot;: null,<br>            &quot;category_name&quot;: &quot;&quot;,<br>            &quot;created_at&quot;: &quot;2023-06-04T13:48:40.259Z&quot;,<br>            &quot;description&quot;: &quot;Mencoba mencoba mencoba mencoba&quot;,<br>            &quot;id&quot;: 86,<br>            &quot;photo_url&quot;: &quot;https://firebasestorage.googleapis.com/v0/b/sociops-5362c.appspot.com/o/images%2Fmaxresdefault.jpg?alt=media&amp;token=e8ca18ab-dc61-4b9c-927d-e874d462ff85&quot;,<br>            &quot;title&quot;: &quot;Berita mencoba&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-18T13:48:40.259Z&quot;<br>        },<br>        {<br>            &quot;author&quot;: &quot;Wildan R&quot;,<br>            &quot;category_id&quot;: null,<br>            &quot;category_name&quot;: &quot;&quot;,<br>            &quot;created_at&quot;: &quot;2023-06-05T14:03:33.972Z&quot;,<br>            &quot;description&quot;: &quot;Eka Bayu Alvian Wildan Yahoo&quot;,<br>            &quot;id&quot;: 87,<br>            &quot;photo_url&quot;: &quot;https://firebasestorage.googleapis.com/v0/b/sociops-5362c.appspot.com/o/images%2Fmaxresdefault.jpg?alt=media&amp;token=0ccfefab-f869-4537-b960-4053497f24d7&quot;,<br>            &quot;title&quot;: &quot;Eka Bayu Alvian&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-18T14:03:33.972Z&quot;<br>        },<br>        {<br>            &quot;author&quot;: &quot;Wildan R&quot;,<br>            &quot;category_id&quot;: null,<br>            &quot;category_name&quot;: &quot;&quot;,<br>            &quot;created_at&quot;: &quot;2023-06-07T14:12:05.332Z&quot;,<br>            &quot;description&quot;: &quot;Alvian bayu membuat berita&quot;,<br>            &quot;id&quot;: 88,<br>            &quot;photo_url&quot;: &quot;https://firebasestorage.googleapis.com/v0/b/sociops-5362c.appspot.com/o/images%2Fmaxresdefault.jpg?alt=media&amp;token=e1e5309c-b723-453f-98fe-b142bba8c440&quot;,<br>            &quot;title&quot;: &quot;Alvian bayu&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-18T14:12:05.332Z&quot;<br>        },<br>        {<br>            &quot;author&quot;: &quot;Wildan R&quot;,<br>            &quot;category_id&quot;: null,<br>            &quot;category_name&quot;: &quot;&quot;,<br>            &quot;created_at&quot;: &quot;2023-06-08T12:45:51.775Z&quot;,<br>            &quot;description&quot;: &quot;xsaxsaxasxasx sdasdsadjklaj jksdjsaajdaklsjd kljdajsdkajljdkasdjla kjskldjasjdakjdsljaldjalsj dsadasdasda sdaddasdasd&quot;,<br>            &quot;id&quot;: 89,<br>            &quot;photo_url&quot;: &quot;https://firebasestorage.googleapis.com/v0/b/sociops-5362c.appspot.com/o/images%2FYoimiya.png?alt=media&amp;token=cf93c9e8-7be9-4172-bda1-685cee5b50d5&quot;,<br>            &quot;title&quot;: &quot;Mengerjakan Mini Project Ssasasasa sadasdasdsadasdasd&quot;,<br>            &quot;updated_at&quot;: &quot;2023-06-19T12:45:51.775Z&quot;<br>        }<br>    ],<br>    &quot;message&quot;: &quot;SUCCESS_GET_ALL_NEWS&quot;,<br>    &quot;status&quot;: true<br>}</pre>
+                                    <h4>Response Cookies</h4>
+                                    <pre></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                        </span>
+                                </span>
+                        </div>
+                    </td>
+
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step"></span></td>
+                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                <tr class="test-SUCCESS">
+
+                    <td width="50" class="step-icon">
+                        <a name="2"></a>
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                               style="display:block">
+                                <i class="bi bi-caret-right-square imgstepSection2 success-icon"
+                                   style="margin-left: 20px; float:left; padding-right:5px"></i>
+                            </a>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
+                               style="display:block;">
+                                <span class="top-level-step">
+                                                Then I receive HTTP response code 200 manage news admin
+                                        </span>
+                            </a>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                    <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                    <td width="100"><span class="top-level-step">003ms</span></td>
+                </tr>
+                    <tr>
+                        <td colspan="5">
+                            <table id="stepSection2" class="step-table-nested" style="display:none;">
+                <tr class="test-SUCCESS">
+
+                    <td width="70" class="step-icon">
+                        <a name="2-0"></a>
+                            <span style="margin-left: 40px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                I receive HTTP response code 200 manage news admin
+                                        </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step">001ms</span></td>
+                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+            <tr class="test-SUCCESS">
+                    <td colspan="2"></td>
+                <td width="130"><span class="top-level-step"><em>SUCCESS</em></span></td>
+                <td width="100"><span class="top-level-step"><em>0.65s</em></span></td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div id="beforefooter"></div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 3.6.21</span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function toggleDiv(divId) {
+        $("#" + divId).toggle();
+        var $icon = $(".img" + divId);
+        $icon.toggleClass("bi-caret-right-square");
+        $icon.toggleClass("bi-caret-down-square");
+    }
+</script>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+
+    $(document).ready(function () {
+        $('img.screenshot').imgPreview({
+            imgCSS: {
+                width: '500px'
+            },
+            distanceFromCursor: {top: 10, left: -200}
+        });
+    });
+
+    //]]>
+</script>
+<div id="imgPreviewContainer" style="position: absolute; top: 612px; left: 355px; display: none; " class=""><img
+            src="" style="display: none; "></div>
+<div id="imgPreviewContainer2" style="position: absolute; top: 925px; left: 320px; display: none; " class="">
+    <img style="width: 200px; display: none; " src=""></div>
+<div id="imgPreviewWithStyles" style="position: absolute; top: 1272px; left: 321px; display: none; " class="">
+    <img style="height: 200px; opacity: 1; display: none; " src=""></div>
+<div id="imgPreviewWithStyles2" style="display: none; position: absolute; "><img style="height: 200px; "></div>
+<div id="imgPreviewWithStyles3" style="display: none; position: absolute; "><img style="height: 200px; "></div>
+
+</div>
+</body>
+</html>

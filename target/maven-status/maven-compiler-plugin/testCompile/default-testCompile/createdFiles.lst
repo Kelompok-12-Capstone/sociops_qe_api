@@ -1,1 +1,3 @@
 starter\CucumberTestSuite.class
+starter\java\adminManageNews.class
+starter\stepdefinitions\adminManageNewsSteps.class
