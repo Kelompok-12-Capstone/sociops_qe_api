@@ -1,6 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Manage News Admin","POST - Create new news without fill title payload","SUCCESS","2023-06-25T18:00:01.2800478+07:00[Asia/Bangkok]","0.0","3.73"
-"Manage News Admin","GET - All news","SUCCESS","2023-06-25T18:00:07.9787544+07:00[Asia/Bangkok]","0.0","5.07"
-"Manage News Admin","GET - News by ID","SUCCESS","2023-06-25T18:00:13.0579913+07:00[Asia/Bangkok]","0.0","1.64"
-"Manage News Admin","GET - News by out of bound ID","SUCCESS","2023-06-25T18:00:14.7016223+07:00[Asia/Bangkok]","0.0","1.1"
-"Manage Fundraising Admin","POST - create new fundraising","SUCCESS","2023-06-25T18:00:16.8158223+07:00[Asia/Bangkok]","0.0","1.33"
