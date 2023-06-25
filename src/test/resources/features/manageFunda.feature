@@ -47,7 +47,7 @@ Feature: Manage Fundraising Admin
   Scenario: PATCH - updating status on fundraising using their ID
     Given I set PATCH  api endpoints to manage status fundraising admin
     When I send PATCH HTTP request
-    Then I receive PA TCH HTTP response code 200
+    Then I receive PATCH HTTP response code 200
 
   Scenario: DELETE - fundraising by its ID
     Given I set DELETE api endpoints manage fundraising admin
