@@ -8,6 +8,7 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.hasKey;
 public class manageFundraising {
     protected static String url = "https://sociops-backend-production.up.railway.app/campaigns";
+    protected static String geturl = "https://sociops-backend-production.up.railway.app/campaigns?page=1&page_size=100&type=FUNDRAISING&category=&status=ACCEPTED&sort=created_at_asc";
     protected String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYiLCJuYW1lIjoiTmFpbHVsIEl6YWgiLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODc3MjAyNjN9.feLHv4jD1YD2bFYHeoiTMZkxzkZ42n2_ANKzAgAFHTs";
 
 
@@ -39,13 +40,11 @@ public class manageFundraising {
         requestBody.put("status", "");
 
 
-        SerenityRest.given().header("Authorization", "Bearer "
-                        + token)
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + token)
                 .header("Content-Type", "application/json")
                 .body(requestBody.toJSONString())
-                .post(endpointtosendFund())
-                .then()
-                .statusCode(200);
+                .post(endpointtosendFund());
     }
     @Step
     public void statusCodeReqFundManag(int arg0) {
@@ -69,7 +68,8 @@ public class manageFundraising {
         requestBody.put("target_donation","");
         requestBody.put("total_action_donation","");
         requestBody.put("detail_action_donation","");
-        requestBody.put("detail_action","FUNDRAISING");
+        requestBody.put("detail_action","");
+        requestBody.put("type", "FUNDRAISING");
         requestBody.put("status","");
 
 
@@ -77,12 +77,123 @@ public class manageFundraising {
                         + token)
                 .header("Content-Type", "application/json")
                 .body(requestBody.toJSONString())
-                .post(endpointtosendFund())
-                .then()
-                .statusCode(500);
+                .post(endpointtosendFund());
     }
     @Step
     public void statusnoDescReqFundManag(int arg0) {
         restAssuredThat(response -> response.statusCode(400));}
+    @Step
+    public void sendPOSTNorequest() {
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("", "");
 
+        SerenityRest.given().header("Authorization", "Bearer "
+                        + token)
+                .header("Content-Type", "application/json")
+                .body(requestBody.toJSONString())
+                .post(endpointtosendFund());
+    }
+    @Step
+    public void statusCodeNoReqPOST(){
+        restAssuredThat(response -> response.statusCode(400));
+    }
+    @Step
+    public void sendREQPOSTNOFILL(){
+        JSONObject requestBody = new JSONObject();
+        SerenityRest.given().header("Authorization", "Bearer "
+                        + token)
+                .header("Content-Type", "application/json")
+                .body(requestBody.toJSONString())
+                .post(endpointtosendFund());
+    }
+
+    @Step
+    public String setEndpointGetAllFund(){
+        return geturl;
+    }
+    @Step
+    public void sendReqGetAllFund(){
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("status", "ACCEPTED");
+        SerenityRest.given().header("Authorization", "Bearer "
+                        + token)
+                .header("Content-Type", "application/json")
+                .body(requestBody.toJSONString())
+                .post(setEndpointGetAllFund());
+    }
+    @Step
+    public void statusCodeGetallFund(){
+        restAssuredThat(response -> response.statusCode(200));
+    }
+
+    @Step
+    public void sendReqGetAllRejectFund(){
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("status", "REJECTED");
+        SerenityRest.given().header("Authorization", "Bearer "
+                        + token)
+                .header("Content-Type", "application/json")
+                .body(requestBody.toJSONString())
+                .post(setEndpointGetAllFund());
+    }
+    @Step
+    public void sendReqGetallPendingFund(){
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("status", "PENDING");
+        SerenityRest.given().header("Authorization", "Bearer "
+                        + token)
+                .header("Content-Type", "application/json")
+                .body(requestBody.toJSONString())
+                .post(setEndpointGetAllFund());
+    }
+
+    @Step
+    public String setEndpointGetIdFund(){
+        return url + "23";
+    }
+    @Step
+    public void sendReqGetIdFund(){
+        SerenityRest.given()
+                .get(endpointtosendFund());
+    }
+    @Step
+    public void statusCodeGetIdFund(){
+        restAssuredThat(response -> response.statusCode(200));
+    }
+
+    @Step
+    public String setPATCHendpoint(){
+        return url + "33";
+    }
+    @Step
+    public void sendReqPatchFund(){
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("status", "REJECTED");
+        SerenityRest.given().header("Authorization", "Bearer "
+                        + token)
+                .header("Content-Type", "application/json")
+                .body(requestBody.toJSONString())
+                .patch(setPATCHendpoint());
+    }
+    @Step
+    public void statuscodePATCHFund(){
+        restAssuredThat(response -> response.statusCode(200));
+    }
+
+    @Step
+    public String setendpointDeleteFund(){
+        return url + "11";
+    }
+    @Step
+    public void sendReqDeleteFund(){
+        SerenityRest.given().header("Authorization", "Bearer "
+                        + token)
+                .header("Content-Type", "application/json")
+                .delete(setendpointDeleteFund());
+    }
+
+    @Step
+    public void statusCodeDeleteFund(){
+        restAssuredThat(response -> response.statusCode(200));
+    }
 }
