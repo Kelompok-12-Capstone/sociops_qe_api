@@ -1,5 +1,0 @@
-starter\CucumberTestSuite.class
-starter\java\manageFundraising.class
-starter\java\adminManageNews.class
-starter\stepdefinitions\adminManageNewsSteps.class
-starter\stepdefinitions\FundraisingSteps.class
