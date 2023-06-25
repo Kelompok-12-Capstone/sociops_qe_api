@@ -11,7 +11,7 @@ import org.json.simple.JSONObject;
 public class adminManageNews {
 
     protected String url = "https://sociops-backend-production.up.railway.app/";
-    protected String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1IiwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNjg3NTgzOTUwfQ.ajHiamQlvdpozXu9xIA2a7icSP0w9fjamZwndtTFqvY";
+    protected String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUiLCJuYW1lIjoiUGFrIEpvaG4iLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODc3MjY5ODN9.7WfpfZfxsKIkLfL6maSf_3OEpiciuAJMsuNYpUH0i90";
 
     @Step("I set POST api endpoints manage news admin")
     public String setPostEpManageNewsA() {
