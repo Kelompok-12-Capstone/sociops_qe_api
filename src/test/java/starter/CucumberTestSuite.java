@@ -1,16 +1,13 @@
 package starter;
 
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
+import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
-import net.serenitybdd.cucumber.CucumberWithSerenity;
-
 @RunWith(CucumberWithSerenity.class)
-@io.cucumber.junit.CucumberOptions(plugin = { "pretty" }, features = "src/test/resources/features")
-/**
- * Unit test for simple App.
- */
+@CucumberOptions(
+        plugin = {"pretty"},
+        features = "src/test/resources/features"
+)
 public class CucumberTestSuite {
 }
