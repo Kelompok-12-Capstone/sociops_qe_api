@@ -4,10 +4,10 @@ Feature: Manage News Admin
     I want to manage news
     So that I can create and read news  
 
-    # Scenario: POST - Create new news with correct format
-    #     Given I set POST api endpoints manage news admin
-    #     When I send POST HTTP request manage news admin correct format
-    #     Then I receive HTTP response code 200 manage news admin
+    Scenario: POST - Create new news with correct format
+        Given I set POST api endpoints manage news admin
+        When I send POST HTTP request manage news admin correct format
+        Then I receive HTTP response code 200 manage news admin
 
     Scenario: POST - Create new news without fill title payload
         Given I set POST api endpoints manage news admin

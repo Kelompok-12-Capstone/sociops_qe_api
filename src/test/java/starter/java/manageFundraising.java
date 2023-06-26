@@ -161,7 +161,7 @@ public class manageFundraising {
 
     @Step
     public String setendpointDeleteFund() {
-        return url + "/28";
+        return url + "/29";
     }
 
     @Step
