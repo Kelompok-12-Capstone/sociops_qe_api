@@ -9,12 +9,14 @@ import org.json.simple.JSONObject;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 public class POST_SIGNUP extends PageObject {
 
     protected String url = "https://sociops-backend-production.up.railway.app/auth/";
 
-    //POSITIVE
-    ///VALIDENDPOINT
+    // POSITIVE
+    /// VALIDENDPOINT
 
     @Step("I set POST sign up api endpoints")
     public String setPostSignUpApiEndpoints() {
@@ -24,12 +26,19 @@ public class POST_SIGNUP extends PageObject {
     @Step("I send POST sign up HTTP request")
     public void sendPostSignUpHttpRequest() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("name", "dimas");
-        requestBody.put("email", "dimasrizqi48@example.com");
+        int length = 15;
+        String allowedChars = "abcdefghijklmnopqrstuvwxyz" + "1234567890" + "_-.";
+        String email = "";
+        String temp = RandomStringUtils.random(length, allowedChars);
+        email = temp.substring(0, temp.length() - 9) + "@example.com";
+
+        requestBody.put("name", "suep");
+        requestBody.put("email", email);
         requestBody.put("password", "12345678");
         requestBody.put("role", "ADMIN");
 
-        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString()).post(setPostSignUpApiEndpoints());
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
+                .post(setPostSignUpApiEndpoints());
     }
 
     @Step("I recive valid HTTP response code 201")
@@ -42,10 +51,8 @@ public class POST_SIGNUP extends PageObject {
         restAssuredThat(response -> response.body("message", equalTo("SUCCESS")));
     }
 
-    //NEGATIVE
-    ///INCORRECT_EMAIL_TYPE
-
-
+    // NEGATIVE
+    /// INCORRECT_EMAIL_TYPE
 
     @Step("I send POST sign up1 HTTP request")
     public void sendPostSignUp1HttpRequest() {
@@ -56,18 +63,17 @@ public class POST_SIGNUP extends PageObject {
         requestBody.put("password", "12345678");
         requestBody.put("role", "ADMIN");
 
-        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString()).post(setPostSignUpApiEndpoints());
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
+                .post(setPostSignUpApiEndpoints());
     }
 
     @Step("I recive invalid HTTP response code 400")
     public void reciveHttpResponseCode400() {
-        restAssuredThat(response-> response.statusCode(400));
+        restAssuredThat(response -> response.statusCode(400));
     }
 
-    //NEGATIVE
-    ///EXIST_EMAIL
-
-
+    // NEGATIVE
+    /// EXIST_EMAIL
 
     @Step("I send POST sign up2 HTTP request")
     public void sendPostSignUp2HttpRequest() {
@@ -78,13 +84,12 @@ public class POST_SIGNUP extends PageObject {
         requestBody.put("password", "12345678");
         requestBody.put("role", "ADMIN");
 
-        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString()).post(setPostSignUpApiEndpoints());
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
+                .post(setPostSignUpApiEndpoints());
     }
 
-    //NEGATIVE
-    ///INCCORECT_PASSWORD_TYPE
-
-
+    // NEGATIVE
+    /// INCCORECT_PASSWORD_TYPE
 
     @Step("I send POST sign up3 HTTP request")
     public void sendPostSignUp3HttpRequest() {
@@ -95,11 +100,12 @@ public class POST_SIGNUP extends PageObject {
         requestBody.put("password", "12345");
         requestBody.put("role", "ADMIN");
 
-        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString()).post(setPostSignUpApiEndpoints());
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
+                .post(setPostSignUpApiEndpoints());
     }
 
-    //NEGATIVE
-    ///WITHOUT_NAME
+    // NEGATIVE
+    /// WITHOUT_NAME
 
     @Step("I send POST sign up4 HTTP request")
     public void sendPostSignUp4HttpRequest() {
@@ -109,11 +115,12 @@ public class POST_SIGNUP extends PageObject {
         requestBody.put("password", "12345678");
         requestBody.put("role", "ADMIN");
 
-        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString()).post(setPostSignUpApiEndpoints());
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
+                .post(setPostSignUpApiEndpoints());
     }
 
-    //NEGATIVE
-    ///WITH_INCCORECT_TYPE_ROLE
+    // NEGATIVE
+    /// WITH_INCCORECT_TYPE_ROLE
     @Step("I send POST sign up5 HTTP request")
     public void sendPostSignUp5HttpRequest() {
         JSONObject requestBody = new JSONObject();
@@ -122,11 +129,12 @@ public class POST_SIGNUP extends PageObject {
         requestBody.put("password", "12345678");
         requestBody.put("role", "admin");
 
-        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString()).post(setPostSignUpApiEndpoints());
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
+                .post(setPostSignUpApiEndpoints());
     }
 
-    //NEGATIVE
-    ///WITHOUT_ROLE
+    // NEGATIVE
+    /// WITHOUT_ROLE
 
     @Step("I send POST sign up6 HTTP request")
     public void sendPostSignUp6HttpRequest() {
@@ -136,11 +144,12 @@ public class POST_SIGNUP extends PageObject {
         requestBody.put("password", "12345678");
         requestBody.put("role", "");
 
-        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString()).post(setPostSignUpApiEndpoints());
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
+                .post(setPostSignUpApiEndpoints());
     }
 
-    //NEGATIVE
-    ///WITHOUT_EMAIL
+    // NEGATIVE
+    /// WITHOUT_EMAIL
 
     @Step("I send POST sign up7 HTTP request")
     public void sendPostSignUp7HttpRequest() {
@@ -150,11 +159,12 @@ public class POST_SIGNUP extends PageObject {
         requestBody.put("password", "12345678");
         requestBody.put("role", "ADMIN");
 
-        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString()).post(setPostSignUpApiEndpoints());
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
+                .post(setPostSignUpApiEndpoints());
     }
 
-    //NEGATIVE
-    ///WITHOUT_PASSWORD
+    // NEGATIVE
+    /// WITHOUT_PASSWORD
 
     @Step("I send POST sign up8 HTTP request")
     public void sendPostSignUp8HttpRequest() {
@@ -164,6 +174,7 @@ public class POST_SIGNUP extends PageObject {
         requestBody.put("password", "");
         requestBody.put("role", "ADMIN");
 
-        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString()).post(setPostSignUpApiEndpoints());
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toJSONString())
+                .post(setPostSignUpApiEndpoints());
     }
 }

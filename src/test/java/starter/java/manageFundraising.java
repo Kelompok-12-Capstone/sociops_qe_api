@@ -145,7 +145,7 @@ public class manageFundraising {
 
     @Step
     public String setPATCHendpoint() {
-        return url + "/33";
+        return url + "/20";
     }
 
     @Step
@@ -161,7 +161,7 @@ public class manageFundraising {
 
     @Step
     public String setendpointDeleteFund() {
-        return url + "/29";
+        return url + "/24";
     }
 
     @Step
