@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"user","POST As admin I not be able to create with invalid data","SUCCESS","2023-06-26T11:16:12.997+07:00[Asia/Bangkok]","0.0","2.21"
+"user","GET As admin I have be able to get volunteer data by id","SUCCESS","2023-06-26T11:16:15.229+07:00[Asia/Bangkok]","0.0","2.32"
+"user","DELETE As admin i want to delete volunteer data","SUCCESS","2023-06-26T11:16:17.568+07:00[Asia/Bangkok]","0.0","2.55"
+"user","GET As admin I have be able to get all volunteer data","SUCCESS","2023-06-26T11:16:20.136+07:00[Asia/Bangkok]","0.0","2.61"
