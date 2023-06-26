@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.hasKey;
 public class manageFundraising {
     protected static String url = "https://sociops-backend-production.up.railway.app/campaigns";
     protected static String geturl = "https://sociops-backend-production.up.railway.app/campaigns?page=1&page_size=100&type=FUNDRAISING&category=&status=ACCEPTED&sort=created_at_asc";
-    protected String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUiLCJuYW1lIjoiUGFrIEpvaG4iLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODc3NTY4NDl9.ZGISTK0W_eRQusdlGvG_OpQKZrsOz-43RPTl6LL1y4A";
+    protected String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUiLCJuYW1lIjoiUGFrIEpvaG4iLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODc4MDQzNzh9.RxAFj269qYUj7ZJ1psL4Nr1A0JfIt26-opGwH70GS8I";
 
     @Step
     public String endpointtosendFund() {

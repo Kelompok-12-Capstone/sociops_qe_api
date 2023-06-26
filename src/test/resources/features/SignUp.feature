@@ -1,4 +1,4 @@
-Feature: User
+Feature: SignUp
     As an admin
     I want to create new user and login account
     So that I can create and login account

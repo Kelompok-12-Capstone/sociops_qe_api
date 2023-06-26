@@ -1,4 +1,4 @@
-package starter.api;
+package starter.java;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
@@ -6,14 +6,14 @@ import net.thucydides.core.annotations.Step;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class VolunteerGetById {
-    protected static String url = "https://sociops-backend-production.up.railway.app/campaigns/34";
+public class VolunteerGetAll {
+    protected static String url = "https://sociops-backend-production.up.railway.app/campaigns?page=1&page_size=100&type=FUNDRAISING&category=&status=ACCEPTED&sort=created_at_asc";
 
-    @Step("I set GET volunteer by id api endpoints")
+    @Step("I set GET all volunteer api endpoints")
     public String setApiEndpoint() {
-        return url;
+        return url ;
     }
-    @Step("I send GET volunteer by id HTTP request")
+    @Step("I send GET all volunteer HTTP request")
     public void sendGetHttpRequest() {
         SerenityRest.given().get(setApiEndpoint());
     }
@@ -22,8 +22,8 @@ public class VolunteerGetById {
         restAssuredThat(response -> response.statusCode(200));
     }
 
-    @Step("I receive valid get data for single volunteer data")
-    public void validateDataSinglePost() {
+    @Step("I receive valid get data for all volunteer data")
+    public void validateData() {
         restAssuredThat(response -> response.body("data",notNullValue()));
     }
 }

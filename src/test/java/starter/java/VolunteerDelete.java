@@ -1,4 +1,4 @@
-package starter.api;
+package starter.java;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class VolunteerDelete {
-    protected static String url = "https://sociops-backend-production.up.railway.app/campaigns/8";
+    protected static String url = "https://sociops-backend-production.up.railway.app/campaigns/10";
 
     protected static String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYiLCJuYW1lIjoiTmFpbHVsIEl6YWgiLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODc3OTQyMjB9.BjWypKJfAM2cQZdPOxrY1o2cGwlbYs_CRmAD_TWZ3zg";
 

@@ -11,7 +11,7 @@ import org.json.simple.JSONObject;
 public class adminManageNews {
 
     protected String url = "https://sociops-backend-production.up.railway.app/";
-    protected String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUiLCJuYW1lIjoiUGFrIEpvaG4iLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODc3MjY5ODN9.7WfpfZfxsKIkLfL6maSf_3OEpiciuAJMsuNYpUH0i90";
+    protected String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUiLCJuYW1lIjoiUGFrIEpvaG4iLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODc4MTQ0ODl9.oCZZPLmsD1_9-4lpjfAdxtv2YLdDmhQJ0IVkeBIRl_c";
 
     @Step("I set POST api endpoints manage news admin")
     public String setPostEpManageNewsA() {
@@ -42,9 +42,9 @@ public class adminManageNews {
     @Step("I send POST HTTP request manage news admin correct format")
     public void sendPostReqManageNewsACorrect() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("title", "Seru!2 Salurkan Donasi");
+        requestBody.put("title", "[DATA TEST] Inovasi untuk Masa Depan: Menggagas Solusi Baru untuk Tantangan Global");
         requestBody.put("description",
-                "andira2 - Proin et euismod diam. Duis fermentum felis nisi");
+                "andira2 - [DATA TEST] Jakarta, 25 Juni 2023 - Inovasi menjadi kunci dalam menghadapi tantangan global yang semakin kompleks. Dalam konferensi inovasi yang diadakan hari ini, para pemimpin, ilmuwan, dan inovator berkumpul untuk berbagi gagasan dan solusi baru yang dapat membawa perubahan positif di berbagai bidang.");
 
         SerenityRest.given().header("Authorization", "Bearer "
                 + token)
@@ -73,7 +73,7 @@ public class adminManageNews {
         JSONObject requestBody = new JSONObject();
         requestBody.put("title", "");
         requestBody.put("description",
-                "andira2 - Proin et euismod diam. Duis fermentum felis nisi");
+                "andira2 - [DATA TEST] Jakarta, 25 Juni 2023 - Inovasi menjadi kunci dalam menghadapi tantangan global yang semakin kompleks. Dalam konferensi inovasi yang diadakan hari ini, para pemimpin, ilmuwan, dan inovator berkumpul untuk berbagi gagasan dan solusi baru yang dapat membawa perubahan positif di berbagai bidang.");
 
         SerenityRest.given().header("Authorization", "Bearer "
                 + token)
@@ -85,7 +85,7 @@ public class adminManageNews {
     @Step("I send POST HTTP request manage news admin without fill description payload")
     public void sendPostReqManageNewsANoInputDescription() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("title", "Seru!2 Salurkan Donasi");
+        requestBody.put("title", "[DATA TEST] Inovasi untuk Masa Depan: Menggagas Solusi Baru untuk Tantangan Global");
         requestBody.put("description",
                 "");
 
@@ -101,7 +101,7 @@ public class adminManageNews {
         JSONObject requestBody = new JSONObject();
         requestBody.put("title", " ");
         requestBody.put("description",
-                "andira2 - Proin et euismod diam. Duis fermentum felis nisi");
+                "andira2 - [DATA TEST] Jakarta, 25 Juni 2023 - Inovasi menjadi kunci dalam menghadapi tantangan global yang semakin kompleks. Dalam konferensi inovasi yang diadakan hari ini, para pemimpin, ilmuwan, dan inovator berkumpul untuk berbagi gagasan dan solusi baru yang dapat membawa perubahan positif di berbagai bidang.");
 
         SerenityRest.given().header("Authorization", "Bearer "
                 + token)
@@ -113,7 +113,7 @@ public class adminManageNews {
     @Step("I send POST HTTP request manage news admin only fill 1 char in description payload")
     public void sendPostReqManageNewsA1CharDescription() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("title", "Seru!2 Salurkan Donasi");
+        requestBody.put("title", "[DATA TEST] Inovasi untuk Masa Depan: Menggagas Solusi Baru untuk Tantangan Global");
         requestBody.put("description",
                 " ");
 

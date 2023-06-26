@@ -1,4 +1,4 @@
-package starter.api;
+package starter.java;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;

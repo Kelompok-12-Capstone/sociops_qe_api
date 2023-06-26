@@ -5,10 +5,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import starter.api.VolunteerCreate;
-import starter.api.VolunteerDelete;
-import starter.api.VolunteerGetAll;
-import starter.api.VolunteerGetById;
+import starter.java.VolunteerCreate;
+import starter.java.VolunteerDelete;
+import starter.java.VolunteerGetAll;
+import starter.java.VolunteerGetById;
 
 public class volunteerSteps {
 
