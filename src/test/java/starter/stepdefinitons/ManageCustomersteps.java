@@ -1,11 +1,11 @@
-package starter.stepdefiniton;
+package starter.stepdefinitons;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import starter.user.GET_ManageCustomer;
+import starter.java.GET_ManageCustomer;
 
 public class ManageCustomersteps {
 

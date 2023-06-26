@@ -1,4 +1,4 @@
-package starter.user;
+package starter.java;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.rest.SerenityRest;
