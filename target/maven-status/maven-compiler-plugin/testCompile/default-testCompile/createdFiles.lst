@@ -1,6 +1,0 @@
-starter\stepdefinitions\volunteerSteps.class
-starter\CucumberTestSuite.class
-starter\api\VolunteerDelete.class
-starter\api\VolunteerGetAll.class
-starter\api\VolunteerGetById.class
-starter\api\VolunteerCreate.class
